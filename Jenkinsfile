@@ -18,7 +18,7 @@ pipeline {
       steps {
         sh '''
         echo "Starting Application"
-        nohup java -jar target/Selenium-1.0-SNAPSHOT.jar > app.log 2>&1 &
+        nohup mvn exec:java -Dexec.mainClass="com.example.App" > app.log 2>&1 &
         '''
       }
     }
